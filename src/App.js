@@ -3,7 +3,7 @@ import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Message from './Message';
 import db from './conn';
-
+import firebase from 'firebase';
 function App() {
   const[input, setInput]=useState('');
   const[msg, setmsg]=useState([]);
@@ -12,11 +12,10 @@ function App() {
   
   useEffect(() => {
     setclr(prompt("enter your color"))
-    
   }, [])
   
   useEffect(() => {
-    db.collection('messages').onSnapshot(snapshot=>{
+    db.collection('messages').orderBy('timestamp','desc').onSnapshot(snapshot=>{
       setmsg(snapshot.docs.map(doc => doc.data()))
     })
   }, [])
@@ -24,7 +23,11 @@ function App() {
 
   const sendmsg = (event)=>{
     event.preventDefault();
-    setmsg([...msg, {message:input, color:clr}]);
+    db.collection('messages').add({
+      message: input, 
+      color: clr,
+      timestamp:firebase.firestore.FieldValue.serverTimestamp()
+    });
     setInput('');
   }
 
