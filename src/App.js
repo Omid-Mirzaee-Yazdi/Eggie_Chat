@@ -1,55 +1,51 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
-import Message from './Message';
-import db from './conn';
-import firebase from 'firebase';
+import Pointer from './pointer';
+import Color from './color';
+import ChatRoom from './ChatRoom';
+
+
 function App() {
-  const[input, setInput]=useState('');
-  const[msg, setmsg]=useState([]);
+  //states
+
   const[clr,setclr]=useState('');
-  console.log(msg);
-  
-  useEffect(() => {
-    setclr(prompt("enter your color"))
-  }, [])
-  
-  useEffect(() => {
-    db.collection('messages').orderBy('timestamp','desc').onSnapshot(snapshot=>{
-      setmsg(snapshot.docs.map(doc => doc.data()))
-    })
-  }, [])
+  const[pointer,setpointer]=useState('');
+  //methods
 
 
-  const sendmsg = (event)=>{
-    event.preventDefault();
-    db.collection('messages').add({
-      message: input, 
-      color: clr,
-      timestamp:firebase.firestore.FieldValue.serverTimestamp()
-    });
-    setInput('');
+  let currdialog=null;
+
+  if(pointer==="" && clr===""){
+    currdialog=(
+      <Pointer setstate={(pointerchosen)=>setpointer(pointerchosen)}/>
+    );
   }
+  
+  else if(pointer!=="" && clr===""){
+    currdialog=(
+      <Color setstate={(colorchosen)=>setclr(colorchosen)}/>
+    );
+  }
+  
+  else if(pointer!=="" && clr!==""){
+    currdialog=(
+      <ChatRoom pointer={pointer} clr={clr}/>
+    );
+  }
+  
+  else{
+    currdialog=(
+      <div>
+        <h1>security issue detected</h1>
+        <h3>please close the window</h3>
+      </div>
+    )
+  }
+
 
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <form>
-        <FormControl>
-          <InputLabel htmlFor="my-input">msg</InputLabel>
-          <Input value={input} onChange={event=>setInput(event.target.value)} aria-describedby="my-helper-text" />
-          <Button disabled={!input} type='submit' onClick={sendmsg}>send</Button>
-        </FormControl>
-      </form>
-
-
-        {
-          msg.map(arg=>(
-            <Message colormsg={arg.color} cont={arg.message} />
-          ))
-        }
-      
-      
+        {currdialog}
     </div>
   );
 }

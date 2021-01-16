@@ -1,3 +1,116 @@
+.maincard{
+  border-radius: 12px !important;
+  box-shadow: 0 0 12px #ddd;
+  min-width: 275px;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 0 50px 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  padding: 30px 10px !important;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.maincardchat{
+  border-radius: 12px !important;
+  box-shadow: 0 0 12px #ddd;
+  min-width: 275px;
+  width: 50%;
+  max-width: 500px;
+  margin: 20px 0 50px 0;
+  position: absolute;
+  left: 50%;
+  padding: 30px 10px !important;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.parentdiv{
+  padding-bottom: 30px !important;
+}
+.MuiInput-input{
+  text-align: center!important;
+}
+.MuiCardContent-root{
+  padding: 2px 10px !important;
+}
+.msgcard{
+  border-radius: 17px !important;
+  min-width: 150px;
+  width: 50%;
+  min-width: 50px;
+  margin: 5px auto;
+}
+.colorbtn{
+  border-radius: 50px !important;
+  width: 100px;
+  height: 100px;
+  font-size: 12px !important;
+  margin:5px !important;
+}
+.tomato{
+  background-color: #b23c17 !important;
+  color: white !important;
+}
+.tomato:hover{
+  background-color: #972e0e !important;
+}
+.mango{
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+.mango:hover{
+  background-color: #f57c00 !important;
+}
+.lemon{
+  background-color: #ccbc2f !important;
+  color: white !important;
+}
+.lemon:hover{
+  background-color: #a89024 !important;
+}
+.cucumber{
+  background-color: #8f9a27 !important;
+  color: white !important;
+}
+.cucumber:hover{
+  background-color: #868d23 !important;
+}
+.ocean{
+  background-color: #00695f !important;
+  color: white !important;
+
+}
+.ocean:hover{
+  background-color: #00544a !important;
+}
+.sky{
+  background-color: #1c7fac !important;
+  color: white !important;
+
+}
+.sky:hover{
+  background-color: #026ca0 !important;
+}
+.emo{
+  background-color: #000000 !important;
+  color: white !important;
+}
+.forest{
+  background-color: #6b4200 !important;
+  color: white !important;
+}
+.forest:hover{
+  background-color: #533300 !important;
+}
+
+.inputpointer{
+  margin-bottom: 5px;
+}
 .App {
   text-align: center;
 }
