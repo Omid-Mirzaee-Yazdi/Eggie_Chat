@@ -51,62 +51,9 @@
   height: 100px;
   font-size: 12px !important;
   margin:5px !important;
+  color:white !important;
 }
-.tomato{
-  background-color: #b23c17 !important;
-  color: white !important;
-}
-.tomato:hover{
-  background-color: #972e0e !important;
-}
-.mango{
-  background-color: #ff9800 !important;
-  color: white !important;
-}
-.mango:hover{
-  background-color: #f57c00 !important;
-}
-.lemon{
-  background-color: #ccbc2f !important;
-  color: white !important;
-}
-.lemon:hover{
-  background-color: #a89024 !important;
-}
-.cucumber{
-  background-color: #8f9a27 !important;
-  color: white !important;
-}
-.cucumber:hover{
-  background-color: #868d23 !important;
-}
-.ocean{
-  background-color: #00695f !important;
-  color: white !important;
 
-}
-.ocean:hover{
-  background-color: #00544a !important;
-}
-.sky{
-  background-color: #1c7fac !important;
-  color: white !important;
-
-}
-.sky:hover{
-  background-color: #026ca0 !important;
-}
-.emo{
-  background-color: #000000 !important;
-  color: white !important;
-}
-.forest{
-  background-color: #6b4200 !important;
-  color: white !important;
-}
-.forest:hover{
-  background-color: #533300 !important;
-}
 
 .inputpointer{
   margin-bottom: 5px;

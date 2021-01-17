@@ -23,7 +23,7 @@ function App() {
   
   else if(pointer!=="" && clr===""){
     currdialog=(
-      <Color setstate={(colorchosen)=>setclr(colorchosen)}/>
+      <Color pointer={pointer} setstate={(colorchosen)=>setclr(colorchosen)}/>
     );
   }
   

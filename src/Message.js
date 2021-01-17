@@ -3,9 +3,15 @@ import { Button, FormControl, Input, InputLabel, Card, CardContent, Typography }
 import "./App.css";
 
 
-const FunctionalArticle = forwardRef((props, ref) => (
+
+const FunctionalArticle = forwardRef((props, ref) => {
+    let clss="msgcard "
+    if(props.colormsg===props.colorusr){
+        clss+="owner"
+    }
     
-    <Card ref={ref} className={props.colormsg+" msgcard"}  variant="outlined">
+    return(
+    <Card ref={ref} className={clss} style={{backgroundColor: props.colormsg}} variant="outlined">
         <CardContent >
             <Typography variant="h6" component="h6">
                 {props.cont}
@@ -13,7 +19,7 @@ const FunctionalArticle = forwardRef((props, ref) => (
         </CardContent>
     </Card>
 
-  ));
+  )});
 
 
 
