@@ -1,6 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import Message from './Message';
-import { Button, FormControl, Input, InputLabel, Card, CardContent, Typography } from '@material-ui/core';
+import { Button, FormControl, Card,TextField, CardContent, Typography } from '@material-ui/core';
+import Send from '@material-ui/icons/Send';
+
 import FlipMove from 'react-flip-move';
 import firebase from 'firebase';
 import db from './conn';
@@ -31,26 +33,39 @@ function ChatRoom(props) {
             <CardContent>
                 <Typography variant="h5" component="h2">
                     {props.pointer}
+                    <hr />
                 </Typography>
-                <br />
-                <br />
+            
+                    <div className="chatsec">
+                        <FlipMove>
+                            {
+                            msg.map((arg)=>(
+                                <Message key={arg.id} colormsg={arg.data.color} colorusr={props.clr} cont={arg.data.message} />
+                            ))
+                            }
+                        </FlipMove>
+                    </div>
                     <form>
                         <FormControl>
-                            <InputLabel htmlFor="my-input">msg</InputLabel>
-                            <Input value={input} onChange={event=>setInput(event.target.value)} aria-describedby="my-helper-text" />
-                            <Button disabled={!input} type='submit' onClick={sendmsg}>send</Button>
+                            <div className="sbmtfld">
+                                <TextField 
+                                    id="outlined-basic" 
+                                    className="inputpointer" 
+                                    value={input} 
+                                    onChange={event=>setInput(event.target.value)}  
+                                    label="Message" 
+                                    variant="outlined"
+                                    size="small" />
+                                <Button
+                                    variant="contained"
+                                    onClick={sendmsg}  
+                                    disabled={!input} 
+                                    type='submit'
+                                    className="submitbtn"
+                                ><Send/></Button>
+                            </div>
                         </FormControl>
                     </form>
-
-
-                    <FlipMove>
-                        {
-                        msg.map((arg)=>(
-                            <Message key={arg.id} colormsg={arg.data.color} colorusr={props.clr} cont={arg.data.message} />
-                        ))
-                        }
-                    </FlipMove>
-                    
             </CardContent>
 
         </Card>

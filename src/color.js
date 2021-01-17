@@ -39,7 +39,10 @@ function Color(props) {
             <Typography variant="h5" component="h2">
                 Pick your color
             </Typography>
-            
+            <Typography color="textSecondary">
+                This will be your only identifier!
+            </Typography>
+
                 <br />
                 {
                 ["","","","","","","",""].map((a)=>(

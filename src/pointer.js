@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
-import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+import { Button, FormControl,TextField } from '@material-ui/core';
+import MeetingRoomRoundedIcon from '@material-ui/icons/MeetingRoomRounded';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -42,17 +43,26 @@ function Pointer(props) {
                 <br />
                 <form>
                 <FormControl>
-                        <InputLabel htmlFor="my-input">Enter your room pointer</InputLabel>
-                        
-                        <Input className="inputpointer" variant="outlined" value={inp} onChange={event=>setInput(event.target.value)} />
+                    <div>
+                        <TextField 
+                        id="outlined-basic" 
+                        className="inputpointer" 
+                        value={inp} 
+                        onChange={event=>setInput(event.target.value)}  
+                        label="Room Pointer" 
+                        variant="outlined"
+                        size="small" />
                         <Button
                             variant="contained"
                             onClick={sendpointer}  
                             disabled={!inp} 
                             type='submit'
+                            className="submitbtn"
                         >
-                            Enter
+                        <MeetingRoomRoundedIcon/>  
                         </Button>
+                    </div>
+
                     </FormControl>
                 </form>
             </CardContent>
