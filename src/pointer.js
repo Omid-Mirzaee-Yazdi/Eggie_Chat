@@ -25,48 +25,52 @@ function Pointer(props) {
         setInput('');
       }
 
-
     return (
-
-        <Card className='maincard' variant="outlined">
-            <CardContent>
-            <Typography variant="h5" component="h2">
-                Mango Anonymous Chat
-            </Typography>
-            <br />
-            <Typography className={classes.pos} color="textSecondary">
-                keep the community clean! <br />
-                we hold no responsibility for your action!
-
-            </Typography>
-
+        <div>
+            <Card className='maincard' variant="outlined">
+                <CardContent>
+                <Typography variant="h5" component="h2">
+                    Eggie Anonymous Chat
+                </Typography>
                 <br />
-                <form>
-                <FormControl>
-                    <div>
-                        <TextField 
-                        id="outlined-basic" 
-                        className="inputpointer" 
-                        value={inp} 
-                        onChange={event=>setInput(event.target.value)}  
-                        label="Room Pointer" 
-                        variant="outlined"
-                        size="small" />
-                        <Button
-                            variant="contained"
-                            onClick={sendpointer}  
-                            disabled={!inp} 
-                            type='submit'
-                            className="submitbtn"
-                        >
-                        <MeetingRoomRoundedIcon/>  
-                        </Button>
-                    </div>
+                <Typography className={classes.pos} color="textSecondary">
+                    keep the community clean! <br />
+                    we hold no responsibility for your action!
 
-                    </FormControl>
-                </form>
-            </CardContent>
-        </Card>
+                </Typography>
+
+                    <br />
+                    <form>
+                    <FormControl>
+                        <div>
+                            <TextField 
+                            id="outlined-basic" 
+                            className="inputpointer" 
+                            value={inp} 
+                            onChange={event=>setInput(event.target.value)}  
+                            label="Room Pointer" 
+                            variant="outlined"
+                            size="small" />
+                            <Button
+                                variant="contained"
+                                onClick={sendpointer}  
+                                disabled={!inp} 
+                                type='submit'
+                                className="submitbtn"
+                            >
+                            <MeetingRoomRoundedIcon/>  
+                            </Button>
+                        </div>
+
+                        </FormControl>
+                    </form>
+                </CardContent>
+                <br/><br/>
+                <p style={{color:"rgb(147, 147, 147)"}}>some copyright statements here
+            <br />built by <a style={{color:"rgb(147, 147, 147)"}} href="http://mirzaee.info" target="_blank"> Omid Mirzaee Yazdi.</a> powered by passion</p>
+            </Card>
+            
+        </div>
 
     )
 }

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Pointer from './pointer';
 import Color from './color';
@@ -15,13 +15,13 @@ function App() {
 
   let currdialog=null;
 
-  if(pointer==="" && clr===""){
+  if(pointer===""){
     currdialog=(
       <Pointer setstate={(pointerchosen)=>setpointer(pointerchosen)}/>
     );
   }
   
-  else if(pointer!=="" && clr===""){
+  else if(clr===""){
     currdialog=(
       <Color pointer={pointer} setstate={(colorchosen)=>setclr(colorchosen)}/>
     );
@@ -29,7 +29,7 @@ function App() {
   
   else if(pointer!=="" && clr!==""){
     currdialog=(
-      <ChatRoom pointer={pointer} clr={clr}/>
+      <ChatRoom clearclr={()=>setclr("")} clearpointer={()=>setpointer("")} pointer={pointer} clr={clr}/>
     );
   }
   

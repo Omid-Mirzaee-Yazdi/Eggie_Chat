@@ -31,10 +31,25 @@ function ChatRoom(props) {
     return (
         <Card className='maincardchat' variant="outlined">
             <CardContent>
-                <Typography variant="h5" component="h2">
+                <div>
+                <Typography variant="h5" style={{textAlign:"left", marginLeft:"10px", marginTop:"-10px"}} component="h2">
                     {props.pointer}
-                    <hr />
+                    <Button
+                        variant="contained"
+                        onClick={props.clearclr}  
+                        type='submit'
+                        className="chngbtns"
+                    >Change color</Button>
+                    <Button
+                        variant="contained"
+                        onClick={props.clearpointer}  
+                        type='submit'
+                        className="chngbtns"
+                    >Change Room</Button>
                 </Typography>
+                <br />
+                </div>
+
             
                     <div className="chatsec">
                         <FlipMove>

@@ -1,8 +1,14 @@
 hr{
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   margin-top: 5px;
   margin-bottom: 5px;
-
+}
+.chngbtns{
+  float: right;
+  margin-right: 10px !important;
+  margin-top: -5px !important;
+  font-size: 10px !important;
+  border-radius:20px !important;
 }
 .submitbtn{
   width:40px !important ;
@@ -39,7 +45,7 @@ hr{
   box-shadow: 0 0 12px #ddd;
   min-width: 275px;
   width: 50%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 0 50px 0;
   position: absolute;
   top: 30%;
@@ -73,23 +79,26 @@ hr{
   padding-bottom: 15px !important;
 }
 .guestmsg{
-  border-radius: 17px 17px 17px 0!important;
+  border-radius: 20px 20px 20px 0!important;
   max-width: 400px;
   height: unset;
-  min-width: 50px;
+  min-width: 30px;
   margin: 5px;
   float: left;
   text-align: left;
 }
 .ownermsg{
-  border-radius: 17px 17px 0 17px !important;
+  border-radius: 20px 20px 0 20px !important;
   max-width: 400px;
   height: unset;
-  min-width: 50px;
+  min-width: 30px;
   margin: 5px;
   float: right;
   text-align: left;
 
+}
+.clrslc{
+  max-width: 500px !important;
 }
 
 @media only screen and (max-width: 800px) {
@@ -100,7 +109,7 @@ hr{
     overflow: hidden !important;
   }
   .chatsec{
-    height: calc(100vh - 150px);
+    height: calc(100vh - 160px);
   }
   .maincardchat{
     box-shadow: none !important;
@@ -115,7 +124,18 @@ hr{
   }
   .ownermsg{
     max-width: 250px;
-
+  }
+  .maincard{
+    box-shadow: none !important;
+    width: 100%  !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    margin: 0 !important;
+    padding-bottom: 10px !important;
+    border:none !important;
+  }
+  .clrslc{
+    margin-top: -60px !important;
   }
 
 }

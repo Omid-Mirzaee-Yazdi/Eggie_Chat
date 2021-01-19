@@ -1,13 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseApp = firebase.initializeApp({
-        apiKey: "AIzaSyBSPll2nTd7OIco4ijXsZbbk1f9QYFXdC0",
-        authDomain: "mango-msg.firebaseapp.com",
-        projectId: "mango-msg",
-        storageBucket: "mango-msg.appspot.com",
-        messagingSenderId: "1043857946734",
-        appId: "1:1043857946734:web:0eb89da6f2dad41f990e7f",
-        measurementId: "G-H8536D2SJR"
+        apiKey: "AIzaSyB0TpquNfGVL3xRo-fmUm_pwkSxXLh1vZM",
+        authDomain: "eggiechat.firebaseapp.com",
+        projectId: "eggiechat",
+        storageBucket: "eggiechat.appspot.com",
+        messagingSenderId: "796791645099",
+        appId: "1:796791645099:web:f1e1c23b56d57924e628ee"
+       
 });
 const db=firebaseApp.firestore();
 export default db;

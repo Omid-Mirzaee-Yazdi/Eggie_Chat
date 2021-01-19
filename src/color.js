@@ -1,8 +1,5 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import {Button,Card,CardContent,Typography} from '@material-ui/core';
-import firebase from 'firebase';
-import db from './conn';
-
 function Color(props) {
     
     const sendclr = (color)=>{
@@ -11,7 +8,7 @@ function Color(props) {
 
     const randomclr=()=>{
         let result           = '#';
-        let characters       = '1234567890abcdef';
+        let characters       = '2a90561b1c370d1480ef';
         let charactersLength = characters.length;
         for ( let i = 0; i < 6; i++ ) {
            result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -34,13 +31,14 @@ function Color(props) {
     }
 
     return (
-        <Card className='maincard' variant="outlined">
+        <Card className='maincard clrslc' variant="outlined">
             <CardContent>
             <Typography variant="h5" component="h2">
                 Pick your color
             </Typography>
             <Typography color="textSecondary">
                 This will be your only identifier!
+                <br/>It's better to choose a light color
             </Typography>
 
                 <br />
